@@ -13,18 +13,45 @@ class RootTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        viewControllers = getItems()
+    }
+
+    private func getItems() -> [UIViewController] {
+        return [getIncomesModule(), getChartsModule(), getExpensesModule()]
     }
     
 
-    /*
-    // MARK: - Navigation
+    private func getIncomesModule() -> UINavigationController {
+        let incomesModule = IncomesViewController()
+        let navigationController = UINavigationController()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        incomesModule.tabBarItem = UITabBarItem(title: L10n.Root.incomes, image: Asset.incomeIcon.image, tag: 0)
+
+        navigationController.viewControllers = [incomesModule]
+
+        return navigationController
     }
-    */
+
+    private func getChartsModule() -> UINavigationController {
+        let chartsModule = ChartsViewController()
+        let navigationController = UINavigationController()
+
+        chartsModule.tabBarItem = UITabBarItem(title: L10n.Root.charts, image: Asset.chartsIcon.image, tag: 1)
+
+        navigationController.viewControllers = [chartsModule]
+
+        return navigationController
+    }
+
+    private func getExpensesModule() -> UINavigationController {
+        let expensesModule = ExpensesViewController()
+        let navigationController = UINavigationController()
+
+        expensesModule.tabBarItem = UITabBarItem(title: L10n.Root.expenses, image: Asset.expensiveIcon.image, tag: 2)
+
+        navigationController.viewControllers = [expensesModule]
+
+        return navigationController
+    }
 
 }

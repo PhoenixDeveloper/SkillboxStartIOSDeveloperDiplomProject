@@ -15,6 +15,9 @@
 		BD9309F72523239900B02253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9309F62523239900B02253 /* Assets.xcassets */; };
 		BD9309FA2523239900B02253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9309F82523239900B02253 /* LaunchScreen.storyboard */; };
 		BD930A0725232AD800B02253 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD930A0625232AD800B02253 /* RootTabBarController.swift */; };
+		BDD7C47225237C47009E3361 /* IncomesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD7C47125237C47009E3361 /* IncomesViewController.swift */; };
+		BDD7C47525237C66009E3361 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD7C47425237C66009E3361 /* ChartsViewController.swift */; };
+		BDD7C47825237C89009E3361 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD7C47725237C89009E3361 /* ExpensesViewController.swift */; };
 		F5F5293302C96AA6B915C2D6 /* Pods_MyFinanceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D56F054E5ACC504BFE3A07 /* Pods_MyFinanceApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +34,9 @@
 		BD9309F92523239900B02253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD9309FB2523239900B02253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD930A0625232AD800B02253 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		BDD7C47125237C47009E3361 /* IncomesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomesViewController.swift; sourceTree = "<group>"; };
+		BDD7C47425237C66009E3361 /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		BDD7C47725237C89009E3361 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
 		EBEF9B8556C070B1562F6693 /* Pods-MyFinanceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFinanceApp.debug.xcconfig"; path = "Target Support Files/Pods-MyFinanceApp/Pods-MyFinanceApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +115,9 @@
 		BD930A0325232A8F00B02253 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BDD7C47625237C73009E3361 /* ExpensesModule */,
+				BDD7C47325237C53009E3361 /* ChartsModule */,
+				BDD7C47025237C1E009E3361 /* IncomesModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -127,6 +136,30 @@
 				BD930A0625232AD800B02253 /* RootTabBarController.swift */,
 			);
 			path = RootTabBar;
+			sourceTree = "<group>";
+		};
+		BDD7C47025237C1E009E3361 /* IncomesModule */ = {
+			isa = PBXGroup;
+			children = (
+				BDD7C47125237C47009E3361 /* IncomesViewController.swift */,
+			);
+			path = IncomesModule;
+			sourceTree = "<group>";
+		};
+		BDD7C47325237C53009E3361 /* ChartsModule */ = {
+			isa = PBXGroup;
+			children = (
+				BDD7C47425237C66009E3361 /* ChartsViewController.swift */,
+			);
+			path = ChartsModule;
+			sourceTree = "<group>";
+		};
+		BDD7C47625237C73009E3361 /* ExpensesModule */ = {
+			isa = PBXGroup;
+			children = (
+				BDD7C47725237C89009E3361 /* ExpensesViewController.swift */,
+			);
+			path = ExpensesModule;
 			sourceTree = "<group>";
 		};
 		C48C36B33AB7ED2611EB6226 /* Frameworks */ = {
@@ -253,8 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9309EE2523239300B02253 /* AppDelegate.swift in Sources */,
+				BDD7C47825237C89009E3361 /* ExpensesViewController.swift in Sources */,
+				BDD7C47525237C66009E3361 /* ChartsViewController.swift in Sources */,
 				BD930A0725232AD800B02253 /* RootTabBarController.swift in Sources */,
 				BD78363F25232DCC0080BA8E /* Scenes.swift in Sources */,
+				BDD7C47225237C47009E3361 /* IncomesViewController.swift in Sources */,
 				BD78363E25232DCC0080BA8E /* Strings.swift in Sources */,
 				BD78363D25232DCC0080BA8E /* Assets.swift in Sources */,
 			);
