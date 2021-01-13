@@ -60,6 +60,8 @@ final class IncomesViewController: UIViewController, DTTableViewManageable {
         setupConstraints()
         configureTableView()
         configureEvents()
+
+        manager.memoryStorage.setItems(TransactionStorage.shared.getIncomes())
     }
 
     private func configureEvents() {
@@ -86,8 +88,6 @@ final class IncomesViewController: UIViewController, DTTableViewManageable {
     private func configureTableView() {
         manager.memoryStorage.setSectionHeaderModels([L10n.Incomes.title])
         manager.register(IncomeTableViewCell.self)
-
-        manager.memoryStorage.setItems([Float(10000), Float(15000), Float(25000)])
     }
 
     private func addSubviews() {

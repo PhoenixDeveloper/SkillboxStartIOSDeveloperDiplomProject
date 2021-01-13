@@ -24,6 +24,7 @@ internal enum Asset {
   internal static let backgroundColor = ColorAsset(name: "backgroundColor")
   internal static let buttonColor = ColorAsset(name: "buttonColor")
   internal static let chartsIcon = ImageAsset(name: "chartsIcon")
+  internal static let disclosureIndicator = ImageAsset(name: "disclosureIndicator")
   internal static let expensiveIcon = ImageAsset(name: "expensiveIcon")
   internal static let incomeIcon = ImageAsset(name: "incomeIcon")
 }

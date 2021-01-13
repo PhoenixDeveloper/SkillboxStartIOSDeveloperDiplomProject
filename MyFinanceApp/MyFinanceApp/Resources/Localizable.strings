@@ -21,3 +21,7 @@
 "Charts.title" = "Графики";
 
 "Expenses.title" = "Расходы";
+
+"ExpensesCategories.add" = "Добавить категорию расходов";
+"ExpensesCategories.Alert.description" = "Введите наименование категории";
+"ExpensesCategories.Alert.placeholder" = "Наименование";

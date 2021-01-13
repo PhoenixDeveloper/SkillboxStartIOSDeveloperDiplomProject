@@ -30,6 +30,17 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "Expenses.title")
   }
 
+  internal enum ExpensesCategories {
+    /// Добавить категорию расходов
+    internal static let add = L10n.tr("Localizable", "ExpensesCategories.add")
+    internal enum Alert {
+      /// Введите наименование категории
+      internal static let description = L10n.tr("Localizable", "ExpensesCategories.Alert.description")
+      /// Наименование
+      internal static let placeholder = L10n.tr("Localizable", "ExpensesCategories.Alert.placeholder")
+    }
+  }
+
   internal enum Incomes {
     /// Добавить доход
     internal static let add = L10n.tr("Localizable", "Incomes.add")

@@ -38,7 +38,7 @@ class RootTabBarController: UITabBarController {
     }
 
     private func getExpensesModule() -> UINavigationController {
-        let expensesModule = ExpensesViewController()
+        let expensesModule = ExpensesCategoriesViewController()
         let navigationController = UINavigationController()
 
         expensesModule.tabBarItem = UITabBarItem(title: L10n.Root.expenses, image: Asset.expensiveIcon.image, tag: 2)

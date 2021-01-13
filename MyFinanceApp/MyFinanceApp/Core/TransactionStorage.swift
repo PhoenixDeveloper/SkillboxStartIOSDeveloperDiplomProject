@@ -29,9 +29,11 @@ class TransactionStorage {
     private init() {
         let emptyExpenses = expenses.filter({ $0.category == nil })
 
-        try! realm.write {
-            realm.delete(emptyExpenses)
-            expenses.removeAll(where: { emptyExpenses.contains($0) })
+        if emptyExpenses.count > 0 {
+            try! realm.write {
+                realm.delete(emptyExpenses)
+                expenses.removeAll(where: { emptyExpenses.contains($0) })
+            }
         }
 
         Observable.merge(changeIncomes, changeExpenses).subscribe(onNext: { [unowned self] in
@@ -53,6 +55,22 @@ class TransactionStorage {
 
     func getIncomes() -> [IncomeEntity] {
         incomes.sorted()
+    }
+
+    func addExpensesCategory(name: String) {
+        let expensesCategory = ExpenseCategoryEntity()
+        expensesCategory.name = name
+
+        try! realm.write {
+            realm.add(expensesCategory)
+            expensesCategories.append(expensesCategory)
+
+            changeExpensesCategories.onNext(())
+        }
+    }
+
+    func getExpensesCategories() -> [ExpenseCategoryEntity] {
+        expensesCategories.sorted()
     }
 
     func getNowBalance() -> Float {
