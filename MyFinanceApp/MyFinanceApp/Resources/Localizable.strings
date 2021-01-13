@@ -6,11 +6,17 @@
   Copyright © 2020 MOB. All rights reserved.
 */
 
+"Common.Money.rub" = "%.2f ₽";
+
 "Root.incomes" = "Доходы";
 "Root.charts" = "График";
 "Root.expenses" = "Расходы";
 
 "Incomes.title" = "Доходы";
+"Incomes.nowBalance" = "Текущий баланс";
+"Incomes.add" = "Добавить доход";
+"Incomes.Alert.description" = "Введите сумму";
+"Incomes.Alert.placeholder" = "Сумма";
 
 "Charts.title" = "Графики";
 

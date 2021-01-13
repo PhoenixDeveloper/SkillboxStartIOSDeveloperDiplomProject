@@ -21,26 +21,20 @@ class RootTabBarController: UITabBarController {
     }
     
 
-    private func getIncomesModule() -> UINavigationController {
+    private func getIncomesModule() -> UIViewController {
         let incomesModule = IncomesViewController()
-        let navigationController = UINavigationController()
 
         incomesModule.tabBarItem = UITabBarItem(title: L10n.Root.incomes, image: Asset.incomeIcon.image, tag: 0)
 
-        navigationController.viewControllers = [incomesModule]
-
-        return navigationController
+        return incomesModule
     }
 
-    private func getChartsModule() -> UINavigationController {
+    private func getChartsModule() -> UIViewController {
         let chartsModule = ChartsViewController()
-        let navigationController = UINavigationController()
 
         chartsModule.tabBarItem = UITabBarItem(title: L10n.Root.charts, image: Asset.chartsIcon.image, tag: 1)
 
-        navigationController.viewControllers = [chartsModule]
-
-        return navigationController
+        return chartsModule
     }
 
     private func getExpensesModule() -> UINavigationController {

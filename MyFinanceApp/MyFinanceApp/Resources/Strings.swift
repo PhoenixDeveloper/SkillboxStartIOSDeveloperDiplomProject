@@ -3,18 +3,26 @@
 
 import Foundation
 
-// swiftlint:disable superfluous_disable_command
-// swiftlint:disable file_length
+// swiftlint:disable superfluous_disable_command file_length implicit_return
 
 // MARK: - Strings
 
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
-// swiftlint:disable nesting type_body_length type_name
+// swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
   internal enum Charts {
     /// Графики
     internal static let title = L10n.tr("Localizable", "Charts.title")
+  }
+
+  internal enum Common {
+    internal enum Money {
+      /// %.2f ₽
+      internal static func rub(_ p1: Float) -> String {
+        return L10n.tr("Localizable", "Common.Money.rub", p1)
+      }
+    }
   }
 
   internal enum Expenses {
@@ -23,8 +31,18 @@ internal enum L10n {
   }
 
   internal enum Incomes {
+    /// Добавить доход
+    internal static let add = L10n.tr("Localizable", "Incomes.add")
+    /// Текущий баланс
+    internal static let nowBalance = L10n.tr("Localizable", "Incomes.nowBalance")
     /// Доходы
     internal static let title = L10n.tr("Localizable", "Incomes.title")
+    internal enum Alert {
+      /// Введите сумму
+      internal static let description = L10n.tr("Localizable", "Incomes.Alert.description")
+      /// Сумма
+      internal static let placeholder = L10n.tr("Localizable", "Incomes.Alert.placeholder")
+    }
   }
 
   internal enum Root {
@@ -37,16 +55,19 @@ internal enum L10n {
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
-// swiftlint:enable nesting type_body_length type_name
+// swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
 
 // MARK: - Implementation Details
 
 extension L10n {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
-    // swiftlint:disable:next nslocalizedstring_key
-    let format = NSLocalizedString(key, tableName: table, bundle: Bundle(for: BundleToken.self), comment: "")
+    let format = BundleToken.bundle.localizedString(forKey: key, value: nil, table: table)
     return String(format: format, locale: Locale.current, arguments: args)
   }
 }
 
-private final class BundleToken {}
+// swiftlint:disable convenience_type
+private final class BundleToken {
+  static let bundle = Bundle(for: BundleToken.self)
+}
+// swiftlint:enable convenience_type
