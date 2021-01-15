@@ -19,8 +19,11 @@ class ExpensesCategoriesRouter {
     }
 
     // MARK: - Methods
+    func goToExpenses(category: ExpensesCategoryEntity) {
+        let expensesVC = ExpensesViewController()
+        expensesVC.category = category
+        expensesVC.hidesBottomBarWhenPushed = true
 
-    func goToExpenses() {
-        print("goToExpenses...")
+        viewController?.navigationController?.pushViewController(expensesVC, animated: true)
     }
 }

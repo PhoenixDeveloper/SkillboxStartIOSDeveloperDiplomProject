@@ -26,8 +26,20 @@ internal enum L10n {
   }
 
   internal enum Expenses {
+    /// Добавить расход
+    internal static let add = L10n.tr("Localizable", "Expenses.add")
+    /// График платежей
+    internal static let goToCharts = L10n.tr("Localizable", "Expenses.goToCharts")
     /// Расходы
     internal static let title = L10n.tr("Localizable", "Expenses.title")
+    internal enum Alert {
+      /// Введите расход
+      internal static let description = L10n.tr("Localizable", "Expenses.Alert.description")
+      /// Наименование
+      internal static let placeholderName = L10n.tr("Localizable", "Expenses.Alert.placeholderName")
+      /// Сумма
+      internal static let placeholderSum = L10n.tr("Localizable", "Expenses.Alert.placeholderSum")
+    }
   }
 
   internal enum ExpensesCategories {

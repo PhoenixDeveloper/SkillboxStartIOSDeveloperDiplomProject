@@ -21,21 +21,12 @@ class TransactionStorage {
     private let disposeBag = DisposeBag()
 
     private lazy var incomes: [IncomeEntity] = Array(self.realm.objects(IncomeEntity.self))
-    private lazy var expensesCategories: [ExpenseCategoryEntity] = Array(self.realm.objects(ExpenseCategoryEntity.self))
+    private lazy var expensesCategories: [ExpensesCategoryEntity] = Array(self.realm.objects(ExpensesCategoryEntity.self))
     private lazy var expenses: [ExpenseEntity] = Array(self.realm.objects(ExpenseEntity.self))
 
     private let realm = try! Realm()
 
     private init() {
-        let emptyExpenses = expenses.filter({ $0.category == nil })
-
-        if emptyExpenses.count > 0 {
-            try! realm.write {
-                realm.delete(emptyExpenses)
-                expenses.removeAll(where: { emptyExpenses.contains($0) })
-            }
-        }
-
         Observable.merge(changeIncomes, changeExpenses).subscribe(onNext: { [unowned self] in
             self.changeBalance.onNext(())
         }).disposed(by: disposeBag)
@@ -58,7 +49,7 @@ class TransactionStorage {
     }
 
     func addExpensesCategory(name: String) {
-        let expensesCategory = ExpenseCategoryEntity()
+        let expensesCategory = ExpensesCategoryEntity()
         expensesCategory.name = name
 
         try! realm.write {
@@ -69,8 +60,26 @@ class TransactionStorage {
         }
     }
 
-    func getExpensesCategories() -> [ExpenseCategoryEntity] {
+    func getExpensesCategories() -> [ExpensesCategoryEntity] {
         expensesCategories.sorted()
+    }
+
+    func addExpense(name: String, value: Float, category: ExpensesCategoryEntity) {
+        let expense = ExpenseEntity()
+        expense.name = name
+        expense.value = value
+        expense.category = category
+
+        try! realm.write {
+            realm.add(expense)
+            expenses.append(expense)
+
+            changeExpenses.onNext(())
+        }
+    }
+
+    func getExpensesByCategory(category: ExpensesCategoryEntity) -> [ExpenseEntity] {
+        expenses.filter({ $0.category == category }).sorted()
     }
 
     func getNowBalance() -> Float {

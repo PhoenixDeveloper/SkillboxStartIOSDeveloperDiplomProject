@@ -15,7 +15,7 @@ final class IncomesViewController: UIViewController, DTTableViewManageable {
 
     // MARK: - Properties
 
-    private let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
 
     // MARK: - UI Elements
 

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 extension IncomesViewController {
     func showAlert() {
@@ -17,11 +19,26 @@ extension IncomesViewController {
             textField.keyboardType = .decimalPad
         }
 
-        alert.addAction(UIAlertAction(title: L10n.Incomes.add, style: .default, handler: { [weak alert] (_) in
-            guard let alert = alert, let text = alert.textFields?[0].text, let value = Float(text) else { return }
+        guard let sumTextField = alert.textFields?[0] else { return }
+
+        let okButton = UIAlertAction(title: L10n.Incomes.add, style: .default, handler: { (_) in
+            guard let text = sumTextField.text, let value = Float(text) else { return }
 
             TransactionStorage.shared.addIncome(value: value)
-        }))
+        })
+
+        okButton.isEnabled = false
+
+        sumTextField.rx.controlEvent(.editingChanged).subscribe(onNext: { _ in
+            guard let text = sumTextField.text else {
+                okButton.isEnabled = false
+                return
+            }
+
+            okButton.isEnabled = !text.isEmpty
+        }).disposed(by: disposeBag)
+
+        alert.addAction(okButton)
 
         self.present(alert, animated: true, completion: nil)
     }

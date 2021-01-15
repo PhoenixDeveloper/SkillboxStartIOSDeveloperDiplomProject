@@ -15,8 +15,9 @@ final class ExpensesCategoriesViewController: UIViewController, DTTableViewManag
 
     // MARK: - Properties
 
+    let disposeBag = DisposeBag()
+
     private var router: ExpensesCategoriesRouter?
-    private let disposeBag = DisposeBag()
 
     // MARK: - UI Elements
 
@@ -78,7 +79,7 @@ final class ExpensesCategoriesViewController: UIViewController, DTTableViewManag
         manager.register(ExpensesCategoryTableViewCell.self)
 
         manager.didSelect(ExpensesCategoryTableViewCell.self) { [unowned self] _, model, _ in
-            self.router?.goToExpenses()
+            self.router?.goToExpenses(category: model)
         }
     }
 

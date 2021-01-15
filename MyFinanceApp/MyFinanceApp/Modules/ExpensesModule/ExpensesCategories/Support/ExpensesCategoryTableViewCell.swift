@@ -38,7 +38,7 @@ class ExpensesCategoryTableViewCell: UITableViewCell, ModelTransfer {
         setupConstraints()
     }
 
-    func update(with model: ExpenseCategoryEntity) {
+    func update(with model: ExpensesCategoryEntity) {
         nameLabel.text = model.name
     }
 

@@ -8,14 +8,14 @@
 
 import RealmSwift
 
-class ExpenseCategoryEntity: Object, Comparable {
+class ExpensesCategoryEntity: Object, Comparable {
     @objc dynamic var name: String = ""
 
     override static func primaryKey() -> String? {
         return "name"
     }
 
-    static func < (lhs: ExpenseCategoryEntity, rhs: ExpenseCategoryEntity) -> Bool {
+    static func < (lhs: ExpensesCategoryEntity, rhs: ExpensesCategoryEntity) -> Bool {
         lhs.name < rhs.name
     }
 }

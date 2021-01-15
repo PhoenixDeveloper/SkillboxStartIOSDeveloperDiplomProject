@@ -21,6 +21,11 @@
 "Charts.title" = "Графики";
 
 "Expenses.title" = "Расходы";
+"Expenses.goToCharts" = "График платежей";
+"Expenses.add" = "Добавить расход";
+"Expenses.Alert.description" = "Введите расход";
+"Expenses.Alert.placeholderName" = "Наименование";
+"Expenses.Alert.placeholderSum" = "Сумма";
 
 "ExpensesCategories.add" = "Добавить категорию расходов";
 "ExpensesCategories.Alert.description" = "Введите наименование категории";
