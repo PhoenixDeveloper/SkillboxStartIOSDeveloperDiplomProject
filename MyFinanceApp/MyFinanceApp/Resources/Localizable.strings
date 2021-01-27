@@ -20,12 +20,13 @@
 "Incomes.Alert.placeholder" = "Сумма";
 
 "Charts.title" = "Графики";
+"Charts.Expenses.title" = "График: %@";
 "Charts.Segmented.first" = "Неделя";
 "Charts.Segmented.second" = "Месяц";
 "Charts.Segmented.third" = "Квартал";
 "Charts.Segmented.fourth" = "Все";
 
-"Expenses.title" = "Расходы";
+"Expenses.title" = "Детализация: %@";
 "Expenses.goToCharts" = "График платежей";
 "Expenses.add" = "Добавить расход";
 "Expenses.Header.first" = "На что";
@@ -35,6 +36,7 @@
 "Expenses.Alert.placeholderName" = "Наименование";
 "Expenses.Alert.placeholderSum" = "Сумма";
 
+"ExpensesCategories.title" = "Расходы";
 "ExpensesCategories.add" = "Добавить категорию расходов";
 "ExpensesCategories.Alert.description" = "Введите наименование категории";
 "ExpensesCategories.Alert.placeholder" = "Наименование";

@@ -98,11 +98,32 @@ class TransactionStorage {
         expenses.filter({ $0.category == category }).sorted()
     }
 
+    func getExpensesByCategory(category: ExpensesCategoryEntity, period: PeriodOfTime) -> [ExpenseEntity] {
+        var dateStart: Date!
+
+        let dateComponent = Calendar.current.dateComponents([.day, .month, .year], from: Date())
+
+        let startCurrentDate = Calendar.current.date(from: dateComponent) ?? Date()
+
+        switch period {
+        case .week:
+            dateStart = Calendar.current.date(byAdding: .day, value: -7, to: startCurrentDate)
+        case .month:
+            dateStart = Calendar.current.date(byAdding: .month, value: -1, to: startCurrentDate)
+        case .quarter:
+            dateStart = Calendar.current.date(byAdding: .month, value: -3, to: startCurrentDate)
+        case .all:
+            dateStart = Date(timeIntervalSince1970: 0)
+        }
+
+        return expenses.filter({ $0.category == category && $0.dateCreate > dateStart }).sorted()
+    }
+
     func getExpenses() -> [ExpenseEntity] {
         expenses.sorted()
     }
 
-    func getExpensesForDaySum(day: Date) -> Float {
+    func getExpensesForDaySum(day: Date, category: ExpensesCategoryEntity? = nil) -> Float {
         expenses.filter({ expense -> Bool in
             let dateComponent = Calendar.current.dateComponents([.day, .month, .year], from: expense.dateCreate)
 
@@ -110,7 +131,11 @@ class TransactionStorage {
                 return false
             }
 
-            return dateCreate == day
+            if let category = category {
+                return dateCreate == day && expense.category == category
+            } else {
+                return dateCreate == day
+            }
         }).reduce(0, { $0 + $1.value })
     }
 

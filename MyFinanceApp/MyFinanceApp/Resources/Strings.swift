@@ -14,6 +14,12 @@ internal enum L10n {
   internal enum Charts {
     /// Графики
     internal static let title = L10n.tr("Localizable", "Charts.title")
+    internal enum Expenses {
+      /// График: %@
+      internal static func title(_ p1: Any) -> String {
+        return L10n.tr("Localizable", "Charts.Expenses.title", String(describing: p1))
+      }
+    }
     internal enum Segmented {
       /// Неделя
       internal static let first = L10n.tr("Localizable", "Charts.Segmented.first")
@@ -47,8 +53,10 @@ internal enum L10n {
     internal static let add = L10n.tr("Localizable", "Expenses.add")
     /// График платежей
     internal static let goToCharts = L10n.tr("Localizable", "Expenses.goToCharts")
-    /// Расходы
-    internal static let title = L10n.tr("Localizable", "Expenses.title")
+    /// Детализация: %@
+    internal static func title(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "Expenses.title", String(describing: p1))
+    }
     internal enum Alert {
       /// Введите расход
       internal static let description = L10n.tr("Localizable", "Expenses.Alert.description")
@@ -70,6 +78,8 @@ internal enum L10n {
   internal enum ExpensesCategories {
     /// Добавить категорию расходов
     internal static let add = L10n.tr("Localizable", "ExpensesCategories.add")
+    /// Расходы
+    internal static let title = L10n.tr("Localizable", "ExpensesCategories.title")
     internal enum Alert {
       /// Введите наименование категории
       internal static let description = L10n.tr("Localizable", "ExpensesCategories.Alert.description")

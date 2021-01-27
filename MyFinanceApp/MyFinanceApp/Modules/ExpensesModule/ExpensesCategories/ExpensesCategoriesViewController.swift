@@ -71,11 +71,11 @@ final class ExpensesCategoriesViewController: UIViewController, DTTableViewManag
         view.backgroundColor = Asset.backgroundColor.color
         tableView.backgroundColor = Asset.backgroundColor.color
 
-        title = L10n.Expenses.title
+        title = L10n.ExpensesCategories.title
     }
 
     private func configureTableView() {
-        manager.memoryStorage.setSectionHeaderModels([L10n.Expenses.title])
+        manager.memoryStorage.setSectionHeaderModels([L10n.ExpensesCategories.title])
         manager.register(ExpensesCategoryTableViewCell.self)
 
         manager.didSelect(ExpensesCategoryTableViewCell.self) { [unowned self] _, model, _ in

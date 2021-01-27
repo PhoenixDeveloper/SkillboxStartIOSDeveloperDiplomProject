@@ -13,6 +13,8 @@ import RxCocoa
 
 final class ChartsViewController: UIViewController {
 
+    var category: ExpensesCategoryEntity?
+
     private let disposeBag = DisposeBag()
 
     private lazy var segmentedControl: UISegmentedControl = {
@@ -62,7 +64,7 @@ final class ChartsViewController: UIViewController {
         var incomesChartDataEntries: [ChartDataEntry] = []
         var expensesChartDataEntries: [ChartDataEntry] = []
 
-        let transactionArray = TransactionStorage.shared.getTransactionsForPeriod(period: period)
+        let transactionArray = category != nil ? TransactionStorage.shared.getExpensesByCategory(category: category!) : TransactionStorage.shared.getTransactionsForPeriod(period: period)
 
         let dateArray = Array(Set(transactionArray.map({ transaction -> Date in
             let dateComponent = Calendar.current.dateComponents([.day, .month, .year], from: transaction.dateCreate)
@@ -72,9 +74,15 @@ final class ChartsViewController: UIViewController {
 
         for (index, date) in dateArray.enumerated() {
 
-            incomesChartDataEntries.append(ChartDataEntry(x: Double(index), y: Double(TransactionStorage.shared.getIncomesForDaySum(day: date))))
+            if category == nil {
+                incomesChartDataEntries.append(ChartDataEntry(x: Double(index), y: Double(TransactionStorage.shared.getIncomesForDaySum(day: date))))
+            }
 
-            expensesChartDataEntries.append(ChartDataEntry(x: Double(index), y: Double(TransactionStorage.shared.getExpensesForDaySum(day: date))))
+            if let category = category {
+                expensesChartDataEntries.append(ChartDataEntry(x: Double(index), y: Double(TransactionStorage.shared.getExpensesForDaySum(day: date, category: category))))
+            } else {
+                expensesChartDataEntries.append(ChartDataEntry(x: Double(index), y: Double(TransactionStorage.shared.getExpensesForDaySum(day: date))))
+            }
         }
 
         chartsView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dateArray.map({ date -> String in
@@ -86,7 +94,7 @@ final class ChartsViewController: UIViewController {
         chartsView.xAxis.setLabelCount(dateArray.count, force: true)
 
         let incomesSetData = LineChartDataSet(entries: incomesChartDataEntries, label: L10n.Incomes.title)
-        let expensesSetData = LineChartDataSet(entries: expensesChartDataEntries, label: L10n.Expenses.title)
+        let expensesSetData = LineChartDataSet(entries: expensesChartDataEntries, label: L10n.ExpensesCategories.title)
 
         incomesSetData.colors = .init(arrayLiteral: .systemGreen)
         incomesSetData.circleColors = .init(arrayLiteral: .systemGray)
@@ -108,7 +116,7 @@ final class ChartsViewController: UIViewController {
 
     private func configureUI() {
         view.backgroundColor = Asset.backgroundColor.color
-        title = L10n.Charts.title
+        title = category != nil ? L10n.Charts.Expenses.title(category!.name) : L10n.Charts.title
     }
 
     private func addSubviews() {

@@ -71,13 +71,15 @@ class ExpensesViewController: UIViewController, DTTableViewManageable {
         }).disposed(by: disposeBag)
 
         goToChartsButton.rx.controlEvent(.touchUpInside).subscribe(onNext: { [unowned self] in
-            self.router?.goToCharts()
+            self.router?.goToCharts(category: self.category)
         }).disposed(by: disposeBag)
     }
 
     private func configureUI() {
         view.backgroundColor = Asset.backgroundColor.color
         tableView.backgroundColor = Asset.backgroundColor.color
+
+        title = L10n.Expenses.title(category.name)
     }
 
     private func configureTableView() {

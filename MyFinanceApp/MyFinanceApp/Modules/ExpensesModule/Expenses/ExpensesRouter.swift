@@ -19,7 +19,11 @@ class ExpensesRouter {
     }
 
     // MARK: - Methods
-    func goToCharts() {
-        print("goToCharts...")
+    func goToCharts(category: ExpensesCategoryEntity) {
+        let chartsVC = ChartsViewController()
+        chartsVC.category = category
+        chartsVC.hidesBottomBarWhenPushed = true
+
+        viewController?.navigationController?.pushViewController(chartsVC, animated: true)
     }
 }
