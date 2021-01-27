@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  MyFinanceApp
+
+  Created by Михаил Беленко on 29.09.2020.
+  Copyright © 2020 MOB. All rights reserved.
+*/
+
+"Common.Money.rub" = "%.2f ₽";
+"Common.cancel" = "Отмена";
+
+"Root.incomes" = "Доходы";
+"Root.charts" = "График";
+"Root.expenses" = "Расходы";
+
+"Incomes.title" = "Доходы";
+"Incomes.nowBalance" = "Текущий баланс";
+"Incomes.add" = "Добавить доход";
+"Incomes.Alert.description" = "Введите сумму";
+"Incomes.Alert.placeholder" = "Сумма";
+
+"Charts.title" = "Графики";
+"Charts.Expenses.title" = "График: %@";
+"Charts.Segmented.first" = "Неделя";
+"Charts.Segmented.second" = "Месяц";
+"Charts.Segmented.third" = "Квартал";
+"Charts.Segmented.fourth" = "Все";
+
+"Expenses.title" = "Детализация: %@";
+"Expenses.goToCharts" = "График платежей";
+"Expenses.add" = "Добавить расход";
+"Expenses.Header.first" = "На что";
+"Expenses.Header.second" = "Когда";
+"Expenses.Header.third" = "Сколько";
+"Expenses.Alert.description" = "Введите расход";
+"Expenses.Alert.placeholderName" = "Наименование";
+"Expenses.Alert.placeholderSum" = "Сумма";
+
+"ExpensesCategories.title" = "Расходы";
+"ExpensesCategories.add" = "Добавить категорию расходов";
+"ExpensesCategories.Alert.description" = "Введите наименование категории";
+"ExpensesCategories.Alert.placeholder" = "Наименование";
+
+"Error.emptySegment" = "Недостающий сегмент. Проверьте логи репозитория, и внесите соответвующие изменения в данный метод";

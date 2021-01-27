@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C00BE95F5EA4FDE551110E2 /* Pods_MyFinanceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934004F01DEBA0B249B8E0E4 /* Pods_MyFinanceApp.framework */; };
+		BD4FC6B525C1D84200958806 /* ExpenseHeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FC6B425C1D84200958806 /* ExpenseHeaderSectionView.swift */; };
+		BD4FC6CA25C1EC6C00958806 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FC6C925C1EC6C00958806 /* Transaction.swift */; };
+		BD4FC6CE25C1F94D00958806 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FC6CD25C1F94D00958806 /* UIStackView+Extensions.swift */; };
+		BD5E105925AF2085005491D7 /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E105825AF2085005491D7 /* IncomeTableViewCell.swift */; };
+		BD5E105B25AF22BE005491D7 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E105A25AF22BE005491D7 /* DefaultButton.swift */; };
+		BD5E105F25AF2CEA005491D7 /* TransactionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E105E25AF2CEA005491D7 /* TransactionStorage.swift */; };
+		BD714EAA25AF496100396E01 /* ExpensesCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD714EA925AF496100396E01 /* ExpensesCategoryTableViewCell.swift */; };
+		BD714EAC25AF4C8200396E01 /* ExpensesCategoriesViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD714EAB25AF4C8200396E01 /* ExpensesCategoriesViewController+Alert.swift */; };
+		BD714EAE25B0518B00396E01 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD714EAD25B0518B00396E01 /* ExpensesViewController.swift */; };
+		BD714EB025B0527000396E01 /* ExpensesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD714EAF25B0527000396E01 /* ExpensesRouter.swift */; };
+		BD78363925232D910080BA8E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD78363825232D910080BA8E /* Localizable.strings */; };
+		BD78363D25232DCC0080BA8E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78363A25232DCC0080BA8E /* Assets.swift */; };
+		BD78363E25232DCC0080BA8E /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78363B25232DCC0080BA8E /* Strings.swift */; };
+		BD78363F25232DCC0080BA8E /* Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD78363C25232DCC0080BA8E /* Scenes.swift */; };
+		BD9309EE2523239300B02253 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9309ED2523239300B02253 /* AppDelegate.swift */; };
+		BD9309F72523239900B02253 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9309F62523239900B02253 /* Assets.xcassets */; };
+		BD9309FA2523239900B02253 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9309F82523239900B02253 /* LaunchScreen.storyboard */; };
+		BD930A0725232AD800B02253 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD930A0625232AD800B02253 /* RootTabBarController.swift */; };
+		BDABDE7925AF2DC20014DC0F /* IncomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABDE7825AF2DC20014DC0F /* IncomeEntity.swift */; };
+		BDABDE7B25AF30660014DC0F /* ExpenseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABDE7A25AF30660014DC0F /* ExpenseEntity.swift */; };
+		BDABDE7D25AF30CC0014DC0F /* ExpensesCategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABDE7C25AF30CC0014DC0F /* ExpensesCategoryEntity.swift */; };
+		BDABDE7F25AF37DA0014DC0F /* IncomesViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABDE7E25AF37DA0014DC0F /* IncomesViewController+Alert.swift */; };
+		BDABDE8325AF45FA0014DC0F /* ExpensesCategoriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABDE8225AF45FA0014DC0F /* ExpensesCategoriesRouter.swift */; };
+		BDBDA51525B0543100B9F622 /* ExpensesViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBDA51425B0543100B9F622 /* ExpensesViewController+Alert.swift */; };
+		BDBDA51825B05B5300B9F622 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBDA51725B05B5300B9F622 /* ExpenseTableViewCell.swift */; };
+		BDD7C47225237C47009E3361 /* IncomesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD7C47125237C47009E3361 /* IncomesViewController.swift */; };
+		BDD7C47525237C66009E3361 /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD7C47425237C66009E3361 /* ChartsViewController.swift */; };
+		BDD7C47825237C89009E3361 /* ExpensesCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD7C47725237C89009E3361 /* ExpensesCategoriesViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6348A0A3E1C1AB506F3E7F89 /* Pods-MyFinanceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFinanceApp.release.xcconfig"; path = "Target Support Files/Pods-MyFinanceApp/Pods-MyFinanceApp.release.xcconfig"; sourceTree = "<group>"; };
+		934004F01DEBA0B249B8E0E4 /* Pods_MyFinanceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFinanceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD4FC6B425C1D84200958806 /* ExpenseHeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseHeaderSectionView.swift; sourceTree = "<group>"; };
+		BD4FC6C925C1EC6C00958806 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		BD4FC6CD25C1F94D00958806 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		BD5E105825AF2085005491D7 /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
+		BD5E105A25AF22BE005491D7 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
+		BD5E105E25AF2CEA005491D7 /* TransactionStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStorage.swift; sourceTree = "<group>"; };
+		BD714EA925AF496100396E01 /* ExpensesCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		BD714EAB25AF4C8200396E01 /* ExpensesCategoriesViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpensesCategoriesViewController+Alert.swift"; sourceTree = "<group>"; };
+		BD714EAD25B0518B00396E01 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
+		BD714EAF25B0527000396E01 /* ExpensesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesRouter.swift; sourceTree = "<group>"; };
+		BD78363825232D910080BA8E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		BD78363A25232DCC0080BA8E /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		BD78363B25232DCC0080BA8E /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		BD78363C25232DCC0080BA8E /* Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
+		BD9309EA2523239300B02253 /* MyFinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD9309ED2523239300B02253 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BD9309F62523239900B02253 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD9309F92523239900B02253 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BD9309FB2523239900B02253 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD930A0625232AD800B02253 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		BDABDE7825AF2DC20014DC0F /* IncomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeEntity.swift; sourceTree = "<group>"; };
+		BDABDE7A25AF30660014DC0F /* ExpenseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseEntity.swift; sourceTree = "<group>"; };
+		BDABDE7C25AF30CC0014DC0F /* ExpensesCategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesCategoryEntity.swift; sourceTree = "<group>"; };
+		BDABDE7E25AF37DA0014DC0F /* IncomesViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IncomesViewController+Alert.swift"; sourceTree = "<group>"; };
+		BDABDE8225AF45FA0014DC0F /* ExpensesCategoriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesCategoriesRouter.swift; sourceTree = "<group>"; };
+		BDBDA51425B0543100B9F622 /* ExpensesViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpensesViewController+Alert.swift"; sourceTree = "<group>"; };
+		BDBDA51725B05B5300B9F622 /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
+		BDD7C47125237C47009E3361 /* IncomesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomesViewController.swift; sourceTree = "<group>"; };
+		BDD7C47425237C66009E3361 /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		BDD7C47725237C89009E3361 /* ExpensesCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesCategoriesViewController.swift; sourceTree = "<group>"; };
+		C73DB85E5EEF86099DFC9CC2 /* Pods-MyFinanceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFinanceApp.debug.xcconfig"; path = "Target Support Files/Pods-MyFinanceApp/Pods-MyFinanceApp.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD9309E72523239300B02253 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C00BE95F5EA4FDE551110E2 /* Pods_MyFinanceApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		134EAB2D02419FA9C06C47EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C73DB85E5EEF86099DFC9CC2 /* Pods-MyFinanceApp.debug.xcconfig */,
+				6348A0A3E1C1AB506F3E7F89 /* Pods-MyFinanceApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD4FC6CC25C1F93600958806 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD4FC6CD25C1F94D00958806 /* UIStackView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BD5E105725AF2070005491D7 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				BD5E105825AF2085005491D7 /* IncomeTableViewCell.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		BD714EA825AF481100396E01 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				BD714EA925AF496100396E01 /* ExpensesCategoryTableViewCell.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		BD9309E12523239300B02253 = {
+			isa = PBXGroup;
+			children = (
+				BD9309EC2523239300B02253 /* MyFinanceApp */,
+				BD9309EB2523239300B02253 /* Products */,
+				134EAB2D02419FA9C06C47EB /* Pods */,
+				D00DEC6D45B3EFF8318E83AA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BD9309EB2523239300B02253 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD9309EA2523239300B02253 /* MyFinanceApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD9309EC2523239300B02253 /* MyFinanceApp */ = {
+			isa = PBXGroup;
+			children = (
+				BDABDE7725AF2DAA0014DC0F /* Entities */,
+				BD930A0125232A2C00B02253 /* Application */,
+				BD930A0425232AA000B02253 /* Core */,
+				BD930A0325232A8F00B02253 /* Modules */,
+				BD930A0225232A5800B02253 /* Resources */,
+			);
+			path = MyFinanceApp;
+			sourceTree = "<group>";
+		};
+		BD930A0125232A2C00B02253 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BD9309ED2523239300B02253 /* AppDelegate.swift */,
+				BD9309FB2523239900B02253 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BD930A0225232A5800B02253 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BD78363A25232DCC0080BA8E /* Assets.swift */,
+				BD9309F62523239900B02253 /* Assets.xcassets */,
+				BD9309F82523239900B02253 /* LaunchScreen.storyboard */,
+				BD78363825232D910080BA8E /* Localizable.strings */,
+				BD78363C25232DCC0080BA8E /* Scenes.swift */,
+				BD78363B25232DCC0080BA8E /* Strings.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BD930A0325232A8F00B02253 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BDD7C47625237C73009E3361 /* ExpensesModule */,
+				BDD7C47325237C53009E3361 /* ChartsModule */,
+				BDD7C47025237C1E009E3361 /* IncomesModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BD930A0425232AA000B02253 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BD4FC6CC25C1F93600958806 /* Extensions */,
+				BD930A0525232AA800B02253 /* RootTabBar */,
+				BD5E105A25AF22BE005491D7 /* DefaultButton.swift */,
+				BD5E105E25AF2CEA005491D7 /* TransactionStorage.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BD930A0525232AA800B02253 /* RootTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BD930A0625232AD800B02253 /* RootTabBarController.swift */,
+			);
+			path = RootTabBar;
+			sourceTree = "<group>";
+		};
+		BDABDE7725AF2DAA0014DC0F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BDABDE7825AF2DC20014DC0F /* IncomeEntity.swift */,
+				BDABDE7A25AF30660014DC0F /* ExpenseEntity.swift */,
+				BDABDE7C25AF30CC0014DC0F /* ExpensesCategoryEntity.swift */,
+				BD4FC6C925C1EC6C00958806 /* Transaction.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		BDABDE8025AF45840014DC0F /* ExpensesCategories */ = {
+			isa = PBXGroup;
+			children = (
+				BD714EA825AF481100396E01 /* Support */,
+				BDD7C47725237C89009E3361 /* ExpensesCategoriesViewController.swift */,
+				BDABDE8225AF45FA0014DC0F /* ExpensesCategoriesRouter.swift */,
+				BD714EAB25AF4C8200396E01 /* ExpensesCategoriesViewController+Alert.swift */,
+			);
+			path = ExpensesCategories;
+			sourceTree = "<group>";
+		};
+		BDABDE8125AF45960014DC0F /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				BDBDA51625B05B2900B9F622 /* Support */,
+				BD714EAD25B0518B00396E01 /* ExpensesViewController.swift */,
+				BD714EAF25B0527000396E01 /* ExpensesRouter.swift */,
+				BDBDA51425B0543100B9F622 /* ExpensesViewController+Alert.swift */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
+		BDBDA51625B05B2900B9F622 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				BDBDA51725B05B5300B9F622 /* ExpenseTableViewCell.swift */,
+				BD4FC6B425C1D84200958806 /* ExpenseHeaderSectionView.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		BDD7C47025237C1E009E3361 /* IncomesModule */ = {
+			isa = PBXGroup;
+			children = (
+				BD5E105725AF2070005491D7 /* Support */,
+				BDD7C47125237C47009E3361 /* IncomesViewController.swift */,
+				BDABDE7E25AF37DA0014DC0F /* IncomesViewController+Alert.swift */,
+			);
+			path = IncomesModule;
+			sourceTree = "<group>";
+		};
+		BDD7C47325237C53009E3361 /* ChartsModule */ = {
+			isa = PBXGroup;
+			children = (
+				BDD7C47425237C66009E3361 /* ChartsViewController.swift */,
+			);
+			path = ChartsModule;
+			sourceTree = "<group>";
+		};
+		BDD7C47625237C73009E3361 /* ExpensesModule */ = {
+			isa = PBXGroup;
+			children = (
+				BDABDE8025AF45840014DC0F /* ExpensesCategories */,
+				BDABDE8125AF45960014DC0F /* Expenses */,
+			);
+			path = ExpensesModule;
+			sourceTree = "<group>";
+		};
+		D00DEC6D45B3EFF8318E83AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				934004F01DEBA0B249B8E0E4 /* Pods_MyFinanceApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD9309E92523239300B02253 /* MyFinanceApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD9309FE2523239900B02253 /* Build configuration list for PBXNativeTarget "MyFinanceApp" */;
+			buildPhases = (
+				0B630E58FA8C0CE27337416B /* [CP] Check Pods Manifest.lock */,
+				BD9309E62523239300B02253 /* Sources */,
+				BD9309E72523239300B02253 /* Frameworks */,
+				BD9309E82523239300B02253 /* Resources */,
+				BD5E105625AF1F79005491D7 /* ShellScript */,
+				A8DDA96AA3B0B0F96897DD85 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyFinanceApp;
+			productName = MyFinanceApp;
+			productReference = BD9309EA2523239300B02253 /* MyFinanceApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD9309E22523239300B02253 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = MOB;
+				TargetAttributes = {
+					BD9309E92523239300B02253 = {
+						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1240;
+					};
+				};
+			};
+			buildConfigurationList = BD9309E52523239300B02253 /* Build configuration list for PBXProject "MyFinanceApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD9309E12523239300B02253;
+			productRefGroup = BD9309EB2523239300B02253 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD9309E92523239300B02253 /* MyFinanceApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD9309E82523239300B02253 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD9309FA2523239900B02253 /* LaunchScreen.storyboard in Resources */,
+				BD78363925232D910080BA8E /* Localizable.strings in Resources */,
+				BD9309F72523239900B02253 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B630E58FA8C0CE27337416B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyFinanceApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8DDA96AA3B0B0F96897DD85 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFinanceApp/Pods-MyFinanceApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFinanceApp/Pods-MyFinanceApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyFinanceApp/Pods-MyFinanceApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD5E105625AF1F79005491D7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD9309E62523239300B02253 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDABDE7F25AF37DA0014DC0F /* IncomesViewController+Alert.swift in Sources */,
+				BD9309EE2523239300B02253 /* AppDelegate.swift in Sources */,
+				BD4FC6CA25C1EC6C00958806 /* Transaction.swift in Sources */,
+				BD714EAE25B0518B00396E01 /* ExpensesViewController.swift in Sources */,
+				BDABDE7B25AF30660014DC0F /* ExpenseEntity.swift in Sources */,
+				BDD7C47825237C89009E3361 /* ExpensesCategoriesViewController.swift in Sources */,
+				BD4FC6B525C1D84200958806 /* ExpenseHeaderSectionView.swift in Sources */,
+				BD714EAC25AF4C8200396E01 /* ExpensesCategoriesViewController+Alert.swift in Sources */,
+				BDD7C47525237C66009E3361 /* ChartsViewController.swift in Sources */,
+				BD930A0725232AD800B02253 /* RootTabBarController.swift in Sources */,
+				BDBDA51825B05B5300B9F622 /* ExpenseTableViewCell.swift in Sources */,
+				BD78363F25232DCC0080BA8E /* Scenes.swift in Sources */,
+				BDABDE7925AF2DC20014DC0F /* IncomeEntity.swift in Sources */,
+				BD5E105B25AF22BE005491D7 /* DefaultButton.swift in Sources */,
+				BD714EB025B0527000396E01 /* ExpensesRouter.swift in Sources */,
+				BD5E105925AF2085005491D7 /* IncomeTableViewCell.swift in Sources */,
+				BDD7C47225237C47009E3361 /* IncomesViewController.swift in Sources */,
+				BDABDE8325AF45FA0014DC0F /* ExpensesCategoriesRouter.swift in Sources */,
+				BD78363E25232DCC0080BA8E /* Strings.swift in Sources */,
+				BD5E105F25AF2CEA005491D7 /* TransactionStorage.swift in Sources */,
+				BD78363D25232DCC0080BA8E /* Assets.swift in Sources */,
+				BDABDE7D25AF30CC0014DC0F /* ExpensesCategoryEntity.swift in Sources */,
+				BD4FC6CE25C1F94D00958806 /* UIStackView+Extensions.swift in Sources */,
+				BD714EAA25AF496100396E01 /* ExpensesCategoryTableViewCell.swift in Sources */,
+				BDBDA51525B0543100B9F622 /* ExpensesViewController+Alert.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BD9309F82523239900B02253 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD9309F92523239900B02253 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BD9309FC2523239900B02253 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BD9309FD2523239900B02253 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD9309FF2523239900B02253 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C73DB85E5EEF86099DFC9CC2 /* Pods-MyFinanceApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8374DGJ7W4;
+				INFOPLIST_FILE = "$(SRCROOT)/MyFinanceApp/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mob.MyFinanceApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BD930A002523239900B02253 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6348A0A3E1C1AB506F3E7F89 /* Pods-MyFinanceApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8374DGJ7W4;
+				INFOPLIST_FILE = "$(SRCROOT)/MyFinanceApp/Application/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mob.MyFinanceApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD9309E52523239300B02253 /* Build configuration list for PBXProject "MyFinanceApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD9309FC2523239900B02253 /* Debug */,
+				BD9309FD2523239900B02253 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD9309FE2523239900B02253 /* Build configuration list for PBXNativeTarget "MyFinanceApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD9309FF2523239900B02253 /* Debug */,
+				BD930A002523239900B02253 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD9309E22523239300B02253 /* Project object */;
+}
