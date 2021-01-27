@@ -9,7 +9,7 @@ target 'MyFinanceApp' do
   pod 'SwiftGen', '~> 6.0'
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
-  pod 'DTTableViewManager', '~> 6.6.0'
+  pod 'DTTableViewManager'
   pod 'SnapKit', '~> 5.0.0'
   pod 'RealmSwift'
 

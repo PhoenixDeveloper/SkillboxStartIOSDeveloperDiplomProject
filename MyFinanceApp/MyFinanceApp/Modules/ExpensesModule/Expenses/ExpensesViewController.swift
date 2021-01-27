@@ -81,8 +81,14 @@ class ExpensesViewController: UIViewController, DTTableViewManageable {
     }
 
     private func configureTableView() {
-        manager.memoryStorage.setSectionHeaderModels([["На что", "Когда", "Сколько"]])
         manager.register(ExpenseTableViewCell.self)
+        manager.registerNiblessHeader(ExpenseHeaderSectionView.self)
+
+        manager.memoryStorage.setSectionHeaderModels([
+                                                        [L10n.Expenses.Header.first,
+                                                         L10n.Expenses.Header.second,
+                                                         L10n.Expenses.Header.third]
+        ])
     }
 
     private func addSubviews() {

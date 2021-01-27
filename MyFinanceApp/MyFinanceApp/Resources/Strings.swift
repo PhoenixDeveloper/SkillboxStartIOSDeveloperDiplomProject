@@ -40,6 +40,14 @@ internal enum L10n {
       /// Сумма
       internal static let placeholderSum = L10n.tr("Localizable", "Expenses.Alert.placeholderSum")
     }
+    internal enum Header {
+      /// На что
+      internal static let first = L10n.tr("Localizable", "Expenses.Header.first")
+      /// Когда
+      internal static let second = L10n.tr("Localizable", "Expenses.Header.second")
+      /// Сколько
+      internal static let third = L10n.tr("Localizable", "Expenses.Header.third")
+    }
   }
 
   internal enum ExpensesCategories {

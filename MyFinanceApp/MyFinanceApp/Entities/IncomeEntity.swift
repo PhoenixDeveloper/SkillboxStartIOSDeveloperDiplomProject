@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class IncomeEntity: Object, Comparable {
+class IncomeEntity: Object, Comparable, Temporable {
     @objc dynamic var value: Float = 0
     @objc dynamic var dateCreate: Date = Date()
 

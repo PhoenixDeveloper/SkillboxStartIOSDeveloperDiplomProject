@@ -23,6 +23,9 @@
 "Expenses.title" = "Расходы";
 "Expenses.goToCharts" = "График платежей";
 "Expenses.add" = "Добавить расход";
+"Expenses.Header.first" = "На что";
+"Expenses.Header.second" = "Когда";
+"Expenses.Header.third" = "Сколько";
 "Expenses.Alert.description" = "Введите расход";
 "Expenses.Alert.placeholderName" = "Наименование";
 "Expenses.Alert.placeholderSum" = "Сумма";
