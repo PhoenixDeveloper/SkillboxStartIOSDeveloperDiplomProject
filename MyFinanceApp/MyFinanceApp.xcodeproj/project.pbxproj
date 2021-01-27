@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		0C00BE95F5EA4FDE551110E2 /* Pods_MyFinanceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934004F01DEBA0B249B8E0E4 /* Pods_MyFinanceApp.framework */; };
 		BD4FC6B525C1D84200958806 /* ExpenseHeaderSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FC6B425C1D84200958806 /* ExpenseHeaderSectionView.swift */; };
-		BD4FC6BA25C1E2A500958806 /* Temporable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FC6B925C1E2A500958806 /* Temporable.swift */; };
+		BD4FC6CA25C1EC6C00958806 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FC6C925C1EC6C00958806 /* Transaction.swift */; };
+		BD4FC6CE25C1F94D00958806 /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4FC6CD25C1F94D00958806 /* UIStackView+Extensions.swift */; };
 		BD5E105925AF2085005491D7 /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E105825AF2085005491D7 /* IncomeTableViewCell.swift */; };
 		BD5E105B25AF22BE005491D7 /* DefaultButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E105A25AF22BE005491D7 /* DefaultButton.swift */; };
 		BD5E105F25AF2CEA005491D7 /* TransactionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E105E25AF2CEA005491D7 /* TransactionStorage.swift */; };
@@ -41,7 +42,8 @@
 		6348A0A3E1C1AB506F3E7F89 /* Pods-MyFinanceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFinanceApp.release.xcconfig"; path = "Target Support Files/Pods-MyFinanceApp/Pods-MyFinanceApp.release.xcconfig"; sourceTree = "<group>"; };
 		934004F01DEBA0B249B8E0E4 /* Pods_MyFinanceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFinanceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD4FC6B425C1D84200958806 /* ExpenseHeaderSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseHeaderSectionView.swift; sourceTree = "<group>"; };
-		BD4FC6B925C1E2A500958806 /* Temporable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temporable.swift; sourceTree = "<group>"; };
+		BD4FC6C925C1EC6C00958806 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		BD4FC6CD25C1F94D00958806 /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
 		BD5E105825AF2085005491D7 /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
 		BD5E105A25AF22BE005491D7 /* DefaultButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButton.swift; sourceTree = "<group>"; };
 		BD5E105E25AF2CEA005491D7 /* TransactionStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStorage.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 				6348A0A3E1C1AB506F3E7F89 /* Pods-MyFinanceApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BD4FC6CC25C1F93600958806 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD4FC6CD25C1F94D00958806 /* UIStackView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BD5E105725AF2070005491D7 /* Support */ = {
@@ -174,6 +184,7 @@
 		BD930A0425232AA000B02253 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BD4FC6CC25C1F93600958806 /* Extensions */,
 				BD930A0525232AA800B02253 /* RootTabBar */,
 				BD5E105A25AF22BE005491D7 /* DefaultButton.swift */,
 				BD5E105E25AF2CEA005491D7 /* TransactionStorage.swift */,
@@ -195,7 +206,7 @@
 				BDABDE7825AF2DC20014DC0F /* IncomeEntity.swift */,
 				BDABDE7A25AF30660014DC0F /* ExpenseEntity.swift */,
 				BDABDE7C25AF30CC0014DC0F /* ExpensesCategoryEntity.swift */,
-				BD4FC6B925C1E2A500958806 /* Temporable.swift */,
+				BD4FC6C925C1EC6C00958806 /* Transaction.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -402,6 +413,7 @@
 			files = (
 				BDABDE7F25AF37DA0014DC0F /* IncomesViewController+Alert.swift in Sources */,
 				BD9309EE2523239300B02253 /* AppDelegate.swift in Sources */,
+				BD4FC6CA25C1EC6C00958806 /* Transaction.swift in Sources */,
 				BD714EAE25B0518B00396E01 /* ExpensesViewController.swift in Sources */,
 				BDABDE7B25AF30660014DC0F /* ExpenseEntity.swift in Sources */,
 				BDD7C47825237C89009E3361 /* ExpensesCategoriesViewController.swift in Sources */,
@@ -414,7 +426,6 @@
 				BDABDE7925AF2DC20014DC0F /* IncomeEntity.swift in Sources */,
 				BD5E105B25AF22BE005491D7 /* DefaultButton.swift in Sources */,
 				BD714EB025B0527000396E01 /* ExpensesRouter.swift in Sources */,
-				BD4FC6BA25C1E2A500958806 /* Temporable.swift in Sources */,
 				BD5E105925AF2085005491D7 /* IncomeTableViewCell.swift in Sources */,
 				BDD7C47225237C47009E3361 /* IncomesViewController.swift in Sources */,
 				BDABDE8325AF45FA0014DC0F /* ExpensesCategoriesRouter.swift in Sources */,
@@ -422,6 +433,7 @@
 				BD5E105F25AF2CEA005491D7 /* TransactionStorage.swift in Sources */,
 				BD78363D25232DCC0080BA8E /* Assets.swift in Sources */,
 				BDABDE7D25AF30CC0014DC0F /* ExpensesCategoryEntity.swift in Sources */,
+				BD4FC6CE25C1F94D00958806 /* UIStackView+Extensions.swift in Sources */,
 				BD714EAA25AF496100396E01 /* ExpensesCategoryTableViewCell.swift in Sources */,
 				BDBDA51525B0543100B9F622 /* ExpensesViewController+Alert.swift in Sources */,
 			);

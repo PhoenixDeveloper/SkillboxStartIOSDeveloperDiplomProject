@@ -14,15 +14,32 @@ internal enum L10n {
   internal enum Charts {
     /// Графики
     internal static let title = L10n.tr("Localizable", "Charts.title")
+    internal enum Segmented {
+      /// Неделя
+      internal static let first = L10n.tr("Localizable", "Charts.Segmented.first")
+      /// Все
+      internal static let fourth = L10n.tr("Localizable", "Charts.Segmented.fourth")
+      /// Месяц
+      internal static let second = L10n.tr("Localizable", "Charts.Segmented.second")
+      /// Квартал
+      internal static let third = L10n.tr("Localizable", "Charts.Segmented.third")
+    }
   }
 
   internal enum Common {
+    /// Отмена
+    internal static let cancel = L10n.tr("Localizable", "Common.cancel")
     internal enum Money {
       /// %.2f ₽
       internal static func rub(_ p1: Float) -> String {
         return L10n.tr("Localizable", "Common.Money.rub", p1)
       }
     }
+  }
+
+  internal enum Error {
+    /// Недостающий сегмент. Проверьте логи репозитория, и внесите соответвующие изменения в данный метод
+    internal static let emptySegment = L10n.tr("Localizable", "Error.emptySegment")
   }
 
   internal enum Expenses {

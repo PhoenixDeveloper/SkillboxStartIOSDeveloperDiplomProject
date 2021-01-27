@@ -1,5 +1,5 @@
 //
-//  Temporable.swift
+//  Transaction.swift
 //  MyFinanceApp
 //
 //  Created by Михаил Беленко on 27.01.2021.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol Temporable {
+protocol Transaction {
+    var value: Float { get }
     var dateCreate: Date { get }
 }

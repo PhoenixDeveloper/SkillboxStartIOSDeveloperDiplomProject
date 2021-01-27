@@ -25,6 +25,8 @@ class ExpenseHeaderSectionView: UITableViewHeaderFooterView, ModelTransfer {
             labelArray.append(createLabel(text: title))
         }
 
+        contentStackView.removeAllArrangedSubviews()
+
         addSubviews()
         setupConstraints()
     }

@@ -12,5 +12,6 @@ target 'MyFinanceApp' do
   pod 'DTTableViewManager'
   pod 'SnapKit', '~> 5.0.0'
   pod 'RealmSwift'
+  pod 'Charts'
 
 end

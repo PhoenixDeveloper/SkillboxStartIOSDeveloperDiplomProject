@@ -8,7 +8,7 @@
 
 import RealmSwift
 
-class ExpenseEntity: Object, Comparable, Temporable {
+class ExpenseEntity: Object, Comparable, Transaction {
 
     @objc dynamic var name: String = ""
     @objc dynamic var dateCreate: Date = Date()

@@ -9,6 +9,10 @@
 import RealmSwift
 import RxSwift
 
+enum PeriodOfTime {
+    case week, month, quarter, all
+}
+
 class TransactionStorage {
 
     static let shared = TransactionStorage()
@@ -48,6 +52,18 @@ class TransactionStorage {
         incomes.sorted()
     }
 
+    func getIncomesForDaySum(day: Date) -> Float {
+        incomes.filter({ income -> Bool in
+            let dateComponent = Calendar.current.dateComponents([.day, .month, .year], from: income.dateCreate)
+
+            guard let dateCreate = Calendar.current.date(from: dateComponent) else {
+                return false
+            }
+
+            return dateCreate == day
+        }).reduce(0, { $0 + $1.value })
+    }
+
     func addExpensesCategory(name: String) {
         let expensesCategory = ExpensesCategoryEntity()
         expensesCategory.name = name
@@ -82,7 +98,44 @@ class TransactionStorage {
         expenses.filter({ $0.category == category }).sorted()
     }
 
+    func getExpenses() -> [ExpenseEntity] {
+        expenses.sorted()
+    }
+
+    func getExpensesForDaySum(day: Date) -> Float {
+        expenses.filter({ expense -> Bool in
+            let dateComponent = Calendar.current.dateComponents([.day, .month, .year], from: expense.dateCreate)
+
+            guard let dateCreate = Calendar.current.date(from: dateComponent) else {
+                return false
+            }
+
+            return dateCreate == day
+        }).reduce(0, { $0 + $1.value })
+    }
+
     func getNowBalance() -> Float {
         incomes.reduce(0, { $0 + $1.value }) - expenses.reduce(0, { $0 + $1.value })
+    }
+
+    func getTransactionsForPeriod(period: PeriodOfTime) -> [Transaction] {
+        var dateStart: Date!
+
+        let dateComponent = Calendar.current.dateComponents([.day, .month, .year], from: Date())
+
+        let startCurrentDate = Calendar.current.date(from: dateComponent) ?? Date()
+
+        switch period {
+        case .week:
+            dateStart = Calendar.current.date(byAdding: .day, value: -7, to: startCurrentDate)
+        case .month:
+            dateStart = Calendar.current.date(byAdding: .month, value: -1, to: startCurrentDate)
+        case .quarter:
+            dateStart = Calendar.current.date(byAdding: .month, value: -3, to: startCurrentDate)
+        case .all:
+            dateStart = Date(timeIntervalSince1970: 0)
+        }
+
+        return (getIncomes() + getExpenses()).filter({ $0.dateCreate > dateStart })
     }
 }

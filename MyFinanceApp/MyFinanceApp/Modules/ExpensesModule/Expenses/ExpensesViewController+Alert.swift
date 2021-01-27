@@ -47,6 +47,8 @@ extension ExpensesViewController {
 
         alert.addAction(okButton)
 
+        alert.addAction(UIAlertAction(title: L10n.Common.cancel, style: .cancel, handler: nil))
+
         self.present(alert, animated: true, completion: nil)
     }
 }
